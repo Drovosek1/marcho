@@ -4,7 +4,7 @@
 @import 'global';
 
 .header {
-  padding: 40px 0;
+  padding: 38px 0;
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -21,20 +21,22 @@
   }
   &__list-link {
     color: $title;
-    font-size: 16px;
+
     text-transform: uppercase;
     transition: all .3s;
     padding-bottom: 2px;
-    // @extend %quicksand-400
-    &:hover{
+    @extend %quicksand-400;
+    
+    &:hover {
       color: $accent;
       border-bottom: 1px solid $accent;
-      @extend %quicksand-500
+      @extend %quicksand-500;
     }
   }
   &__list-link--activ {
     color: $accent;
-    @extend %quicksand-500
+    border-bottom: 1px solid $accent;
+    @extend %quicksand-500;
   }
 }
 
