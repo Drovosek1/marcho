@@ -6,11 +6,11 @@ const autoprefixer = require('gulp-autoprefixer');
 const uglify       = require('gulp-uglify');
 const imagemin     = require('gulp-imagemin');
 const del          = require('del');
-const browserSync  = require('browser-sync');
+const browserSync  = require('browser-sync').create();
 
 
 function browsersync() {
-  browserSync({
+  browserSync.init({
     server: {
       baseDir: 'app/'
     },
@@ -72,7 +72,7 @@ function cleanDist() {
 
 function watching() {
   watch(['app/scss/**/*.scss'], styles);
-  watch(['app/js/**/*.js', '!app/js/main.minjs'], scripts);
+  watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
   watch(['app/**/*.html']).on('change', browserSync.reload);
 } 
 
